@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasta Everyday</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header>
+        <div class = "header-logo">
+            Pasta Everyday
+        </div>
+        <div class = "header-nav">
+            <ul>
+                <li>Tentang</li>
+                <li>Hubungi Kami</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="main-containeer">
+            <h1><center>Vegan <span>Pasta</span> Everyday</center></h1>
+            <h2><center>Eat and healthy</center></h2>
+        </div>
+        <div class="contents">
+            <h3 class="section-title">Menu Recommend</h3>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="coconutcurrynoodlebowls5-1524x2302.jpg" alt="Coconut Curry Noodle">
+                </div>
+                <p>Coconut Curry Noodle</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="currynoodles5.jpg" alt="currynoodles">
+                </div>
+                <p>Curry Noodle</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="Linguine-with-Mushroom-Wine-Sauce-1-of-1-4-1367x2048.jpg" alt="Linguine with Mushroom">  
+                </div>
+                <p>Linguine with Mushroom</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="Spicy-Vegan-Pad-Thai21.jpg" alt="Spicy Vegan Pad">  
+                </div>
+                <p>Spicy Vegan Pad</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="VeganBroccoli.jpg" alt="Vegan Broccoli Noodle">  
+                </div>
+                <p>Vegan Broccoli Noodle</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="vegan pasta.jpg" alt="PHP">  
+                </div>
+                <p>Vegan Pasta</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="veggieSoba.jpg" alt="PHP">  
+                </div>
+                <p>Veggie Soba Noodle</p>
+            </div>
+
+            <div class="contents-item">
+                <div class="contents-image white">
+                    <img src="Sausage.jpg" alt="PHP">  
+                </div>
+                <p>Spicy Vegan Pasta Chesse</p>
+            </div>
+        </div>
+        <div class="contact">
+            <h4 class="section-title">Hubungi Kami </h4>
+            <form onsubmit="savemassage()">
+                <p>Nama (wajib diisi) *</p>
+                <input type="text" name="" id="nama" placeholder="Masukkan Nama Anda">
+                <p>Email (wajib diisi) *</p>
+                <input type="email" name="" id="email" placeholder="Masukkan Email Anda">
+                <p>Pesan (wajib diisi) *</p>
+                <input type="text" name="" id="pesan" placeholder="Masukkan Pesan Anda">
+                <p class="txt-red">* Bidang wajib diisi</p>
+                <button type="submit" class="contact-submit"> Send </button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class = "footer-logo">Pasta Everyday</div>
+        <div class = "footer-text">
+            <h5>Tentang Kami</h5>
+            <p>Alamat  : Jalan Suka Senang </p>
+            <p>No Telp : 085612389176</p>
+        </div>
+    </footer>
+
+    <script>
+        let massage=[];
+        const savemassage = () =>{
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let pesan = document.getElementById("pesan").value;
+
+            let user = {nama: nama,email: email,pesan: pesan};
+            let sendPesan = localStorage.getItem("pesan");
+
+            if(sendPesan != null){
+                massage = JSON.parse(sendPesan);
+            }
+            massage.push(user);
+            localStorage.setItem("pesan", JSON.stringify(massage));
+        }
+    </script>
+
+    
+    
+</body>
+</html>
